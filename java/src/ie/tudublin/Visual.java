@@ -6,7 +6,7 @@ import ddf.minim.analysis.FFT;
 
 public abstract class Visual extends PApplet
 {
-	private int frameSize = 512;
+	private int frameSize = 1024;
 	private int sampleRate = 44100;
 
 	private float[] bands;
@@ -86,10 +86,13 @@ public abstract class Visual extends PApplet
 	}
 
 	public void loadAudio(String filename)
-	{
-		ap = minim.loadFile(filename, frameSize);
-		ab = ap.mix;
-	}
+{
+    minim = new Minim(this);
+    ap = minim.loadFile("MusicVisuals/java/data/experience.mp3", frameSize);
+    ap.play();
+    ab = ap.mix;
+    colorMode(HSB);
+}
 
 	public int getFrameSize() {
 		return frameSize;

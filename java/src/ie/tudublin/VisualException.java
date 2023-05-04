@@ -1,4 +1,4 @@
-package assaigment;
+package ie.tudublin;
 
 public class VisualException extends Throwable
 {

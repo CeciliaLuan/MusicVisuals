@@ -1,16 +1,15 @@
 package ie.tudublin;
 
 import assaigment.DiscoBall;
-import assaigment.music_note;
 import assaigment.stars;
 
 public class Main
 {	
 
-	public void startUI()
+	public static void startUI()
 	{
 		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new stars(null));		
+        processing.core.PApplet.runSketch( a, new MyVisual());		
 	}
 	public void discoBallUI()
 	{

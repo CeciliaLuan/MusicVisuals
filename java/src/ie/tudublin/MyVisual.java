@@ -10,8 +10,8 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     Idea h_idea2;
-    
-   
+   // stars s;
+    music_note mNote;
     //Idea h_idea;
     int mode = 1;
    // AudioBandsVisual abv;
@@ -39,8 +39,8 @@ public class MyVisual extends Visual
         //loadAudio("MusicVisuals/java/data/Victoria_Mon_t_ft_Khalid_-_Experience.mp3");  
          
         h_idea2 = new Idea(this);
-       
-    
+        mNote = new music_note(this);
+       // s = new stars(this);
         
         // Call this instead to read audio from the microphone
        // startListening(); 
@@ -88,13 +88,13 @@ public class MyVisual extends Visual
                     break;
             case 2://When you press key 1 (hadassah)
              
-              
+                part_two();
                 
                 break;
 
             case 3:// when you press key 2 (cece)
         
-              
+              // part_three();
 
                 break;
 
@@ -121,12 +121,12 @@ public class MyVisual extends Visual
 
     void part_two()
     {
-        
+        mNote.render();
     }
 
     void part_three()
     {
-        
+        //s.render();
     }
 
 }

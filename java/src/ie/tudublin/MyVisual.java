@@ -10,8 +10,9 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     Idea h_idea2;
-   // stars s;
+    stars s;
     music_note mNote;
+    DiscoBall db;
     //Idea h_idea;
     int mode = 1;
    // AudioBandsVisual abv;
@@ -21,7 +22,7 @@ public class MyVisual extends Visual
 
 	public void settings()
     {
-        size(1024, 500);
+        size(1024, 700,P3D);
         //h_idea2 = new Idea();
         
         // Use this to make fullscreen
@@ -40,7 +41,7 @@ public class MyVisual extends Visual
          
         h_idea2 = new Idea(this);
         mNote = new music_note(this);
-       // s = new stars(this);
+        s = new stars(this);
         
         // Call this instead to read audio from the microphone
        // startListening(); 
@@ -84,21 +85,25 @@ public class MyVisual extends Visual
 			case 1://first to play (grace)
            
                 part_one();
+                System.out.println("in 1 ");
                 
                     break;
             case 2://When you press key 1 (hadassah)
              
                 part_two();
+               
                 
                 break;
 
             case 3:// when you press key 2 (cece)
         
-              // part_three();
+              part_three();
 
                 break;
 
             case 4://when you press key 3 (molly)
+
+                part_four();
 
                 break;
 
@@ -121,12 +126,52 @@ public class MyVisual extends Visual
 
     void part_two()
     {
+        try
+        {
+            calculateFFT();
+        }
+        catch(VisualException e)
+        {
+            e.printStackTrace();
+        }
+        calculateFrequencyBands();
+        colorMode(HSB, 360, 100, 100);
         mNote.render();
     }
 
     void part_three()
     {
-        //s.render();
+        try
+        {
+            calculateFFT();
+        }
+        catch(VisualException e)
+        {
+            e.printStackTrace();
+        }
+        calculateFrequencyBands();
+        s.render();
     }
 
+    void part_four()
+    {
+       
+        try {
+                calculateFFT();
+            } 
+            
+        catch (VisualException e) 
+            {
+                // TODO Auto-generated catch block
+                e.printStackTrace();
+             }
+             calculateFrequencyBands();
+             db.render();
+       
+    }
+
+    
+
+
 }
+

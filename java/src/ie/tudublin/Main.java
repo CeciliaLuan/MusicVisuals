@@ -1,7 +1,7 @@
 package ie.tudublin;
 
-import assaigment.DiscoBall;
-import assaigment.stars;
+//import assaigment.DiscoBall;
+//import assaigment.stars;
 
 public class Main
 {	
@@ -11,11 +11,7 @@ public class Main
 		String[] a = {"MAIN"};
         processing.core.PApplet.runSketch( a, new MyVisual());		
 	}
-	public void discoBallUI()
-	{
-		String[] a = {"MAIN"};
-        processing.core.PApplet.runSketch( a, new DiscoBall());		
-	}
+
 
 	public void music_noteUI()
 	{
@@ -24,15 +20,10 @@ public class Main
 
 	}
 
-	public void experianceUI()
-	{
-		String[] a = {"MAIN"};
-		processing.core.PApplet.runSketch( a, new Experiance());		
-	}
 
 	public static void main(String[] args)
 	{
 		Main main = new Main();	
-		main.startUI();		
+		Main.startUI();		
 	}
 }

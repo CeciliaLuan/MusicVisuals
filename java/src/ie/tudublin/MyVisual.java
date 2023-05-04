@@ -10,7 +10,7 @@ public class MyVisual extends Visual
 {    
     WaveForm wf;
     Idea h_idea2;
-  
+    
    
     //Idea h_idea;
     int mode = 1;
